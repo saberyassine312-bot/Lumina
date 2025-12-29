@@ -1,10 +1,10 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
-
 export const getSkinAdvice = async (userQuery: string) => {
-  const ai = getAI();
+  // استخدام التهيئة المباشرة كما هو مطلوب في المعايير
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  
   try {
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",

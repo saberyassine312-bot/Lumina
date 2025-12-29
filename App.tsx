@@ -141,7 +141,6 @@ const App: React.FC = () => {
             {relatedProducts.map(product => (
               <ProductCard key={product.id} product={product} />
             ))}
-            {/* Empty space filler if only 3 items */}
             <div className="hidden lg:flex items-center justify-center p-8 border-2 border-dashed border-slate-100 rounded-3xl bg-slate-50/50">
               <div className="text-center text-slate-300">
                 <i className="fas fa-plus-circle text-4xl mb-2 opacity-20"></i>
@@ -203,7 +202,7 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Newsletter */}
+      {/* Newsletter Section */}
       <section id="newsletter" className="py-24 bg-pink-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center bg-white rounded-[3rem] p-12 shadow-xl border border-pink-100">
           <div className="inline-block p-4 bg-pink-100 rounded-full mb-6 text-pink-600">
@@ -249,7 +248,7 @@ const App: React.FC = () => {
             </div>
             
             <div>
-              <h4 className="text-lg font-bold text-slate-900 mb-6">روابط سريعة</h4>
+              <h4 className="text-lg font-bold text-slate-900 mb-6 underline decoration-pink-300 underline-offset-8">روابط سريعة</h4>
               <ul className="space-y-4 text-slate-500 font-medium">
                 <li><a href="#about" className="hover:text-pink-600 transition-colors">عن لومينا</a></li>
                 <li><a href="#products" className="hover:text-pink-600 transition-colors">جميع المنتجات</a></li>
@@ -259,7 +258,7 @@ const App: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 mb-6">الدعم</h4>
+              <h4 className="text-lg font-bold text-slate-900 mb-6 underline decoration-pink-300 underline-offset-8">الدعم</h4>
               <ul className="space-y-4 text-slate-500 font-medium">
                 <li><a href="#hero" className="hover:text-pink-600 transition-colors">الشحن والتوصيل</a></li>
                 <li><a href="#hero" className="hover:text-pink-600 transition-colors">سياسة الاسترجاع</a></li>
@@ -269,7 +268,7 @@ const App: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 mb-6">تواصل معنا</h4>
+              <h4 className="text-lg font-bold text-slate-900 mb-6 underline decoration-pink-300 underline-offset-8">تواصل معنا</h4>
               <ul className="space-y-4 text-slate-500 font-medium">
                 <li className="flex items-center justify-end space-x-3 space-x-reverse">
                   <a href="mailto:support@lumina.beauty" className="hover:text-pink-600 transition-colors">support@lumina.beauty</a>
