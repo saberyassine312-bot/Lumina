@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onShopNow: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onShopNow }) => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center pt-20 hero-gradient overflow-hidden">
       {/* Decorative circles */}
@@ -21,12 +25,18 @@ const Hero: React.FC = () => {
             اكتشفي سر الجمال الحقيقي مع منتجات لومينا المبتكرة. نجمع بين أحدث التقنيات العلمية وأجود المكونات الطبيعية لنمنحك بشرة مشرقة وصحية تليق بكِ.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-end">
-            <button className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl">
+            <button 
+              onClick={onShopNow}
+              className="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold text-lg hover:bg-pink-600 transition-all shadow-lg hover:shadow-pink-200 text-center transform hover:-translate-y-1 outline-none"
+            >
               ابدأي رحلة الجمال
             </button>
-            <button className="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+            <a 
+              href="#products" 
+              className="px-8 py-4 bg-white text-slate-900 border border-slate-200 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all text-center inline-block transform hover:-translate-y-1"
+            >
               مشاهدة المجموعات
-            </button>
+            </a>
           </div>
           <div className="flex items-center justify-end space-x-4 space-x-reverse pt-8">
             <div className="flex -space-x-2 space-x-reverse">
@@ -45,7 +55,8 @@ const Hero: React.FC = () => {
             <img 
               src="https://images.unsplash.com/photo-1556228720-195a672e8a03?q=80&w=1000&auto=format&fit=crop" 
               alt="Lumina Skincare Product" 
-              className="rounded-3xl shadow-2xl mx-auto w-full max-w-md"
+              className="rounded-3xl shadow-2xl mx-auto w-full max-w-md cursor-pointer"
+              onClick={onShopNow}
             />
           </div>
           {/* Floating badge */}
@@ -55,8 +66,8 @@ const Hero: React.FC = () => {
                 <i className="fas fa-star text-2xl"></i>
               </div>
               <div>
-                <p className="text-xs text-slate-500 font-bold">تقييم العملاء</p>
-                <p className="text-lg font-bold">4.9/5 نجوم</p>
+                <p className="text-xs text-slate-500 font-bold">الأكثر مبيعاً</p>
+                <p className="text-lg font-bold">سيروم لومينا جلو</p>
               </div>
             </div>
           </div>

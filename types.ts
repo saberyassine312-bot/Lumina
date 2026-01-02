@@ -7,6 +7,9 @@ export interface Product {
   image: string;
   description: string;
   rating: number;
+  discountPercentage?: number;
+  salesCount: number; // عدد المبيعات لتحديد الأكثر مبيعاً
+  createdAt: string;  // تاريخ الإضافة لتحديد المنتجات الجديدة
 }
 
 export interface Message {
