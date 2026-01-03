@@ -2,7 +2,7 @@
 import { GoogleGenAI } from "@google/genai";
 
 export const getSkinAdvice = async (userQuery: string) => {
-  // استخدام التهيئة المباشرة كما هو مطلوب في المعايير
+  // التأكد من استخدام التنسيق المطلوب: { apiKey: process.env.API_KEY }
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   try {
@@ -14,9 +14,11 @@ export const getSkinAdvice = async (userQuery: string) => {
         temperature: 0.7,
       },
     });
-    return response.text;
+    
+    // استخدام .text مباشرة كما هو مطلوب في القواعد الجديدة
+    return response.text || "عذراً، لم أستطع صياغة نصيحة في الوقت الحالي.";
   } catch (error) {
     console.error("Gemini API Error:", error);
-    return "عذراً، واجهت مشكلة في الاتصال بخبيرنا الافتراضي. يرجى المحاولة مرة أخرى لاحقاً.";
+    return "عذراً، واجهت مشكلة في الاتصال بخبيرنا الافتراضي. يرجى التأكد من إعداد مفتاح واجهة برمجة التطبيقات بشكل صحيح.";
   }
 };
